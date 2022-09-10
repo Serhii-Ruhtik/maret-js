@@ -142,7 +142,6 @@
 //   console.log(`Індекс ${index}, значення ${number}`);
 // });
 
-
 // const numbers = [5, 10, 15, 20, 25];
 
 // const logMessage = (number, index) => {
@@ -150,3 +149,83 @@
 // };
 
 // numbers.forEach(logMessage);
+
+// =====================================================================
+// Зразок Callback
+
+// const fnA = function (message, callback) {
+//   console.log(message);
+//   console.log(callback);
+//   callback();
+// }
+
+// const fnB = function () {
+//   console.log('Передзвоніть мені будь ласка');
+// }
+
+// fnA("qwerty", fnB);
+// =======================================================================
+
+// // Створимо функцію яка може рахувати числа
+
+// const doMath = function (a, b, callback) {
+//   const result = callback(a, b);
+
+//   console.log(result);
+// }
+// // const add = function (x, y) {
+// //   return x + y;
+// // }
+
+// const sub = function (x, y) {
+//   return x - y;
+// }
+
+// doMath(2, 4, function (x, y) {
+//   return x + y;
+// });
+// doMath(13, 7, sub);
+
+// ============================================================================
+// ============================TEST============================================
+// https://www.facebook.com
+// https://www.google.com
+// https://www.unian.net
+// https://www.dou.ua
+
+
+// function generatorUri(domain) {
+//   return function (url) {
+//     return `https://www.${url}.${domain}`;
+//   };
+// };
+// // ====Звичайна визов
+// const dou = generatorUri('ua');
+// let res = dou('dou');
+// console.log(res);
+
+// // ==== Карірування====
+// const facebook = generatorUri("com")("facebook");
+// console.log(facebook);
+
+// // === Щу спосіб виклику======
+// const google = generatorUri("com");
+// console.log(google('google'));
+
+// const unian = generatorUri("net")("unian");
+// console.log(unian);
+
+// function famelyMy() {
+//   const famely = ["Nataly", "Grom"];
+//   return {
+//     show() {
+//       console.log(famely);
+//     },
+//     add(newUser) {
+//       famely.push(newUser);
+//     },
+//   }
+// }
+// const house = famelyMy();
+// house.add("junior");
+// house.show();
