@@ -5,7 +5,6 @@
 //   { hex: "#ffeb3b", rgb: "255,235,59" },
 // ];
 
-
 // const hexColors = [];
 // const rgbColors = [];
 // // Change code below this line
@@ -42,8 +41,7 @@
 //         }
 //     }
 //     return null;
-        
-    
+
 //   // Change code above this line
 // }
 // console.log("Radar", getProductPrice("Radar"));
@@ -100,8 +98,6 @@
 //         }
 //     }
 
-
-
 //     return totalPrise;
 //   // Change code above this line
 // }
@@ -112,3 +108,31 @@
 // console.log(calculateTotalPrice("Scanner"));
 
 // // ======================================================
+
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName, makePizza, onOrderError) {
+    if (!this.pizzas.includes(pizzaName)) {
+      return onOrderError(pizzaName);
+    }
+    return makePizza(pizzaName);
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(error) {
+  return `Error! There is no pizza with a name ${error} in the assortment.`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError);
+

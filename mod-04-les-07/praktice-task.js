@@ -1,20 +1,16 @@
-// // Напишите следующие функции:
+// const clients = ["Mango", "Ajax", "Poly"];
 
-// // createProduct(obj, callback) - принимает объект товара без id, а также колбек.
-// // Функция создаёт обьект товара, добавляя ему уникальный идентификатор в свойство id и вызывает колбек передавая ему созданный обьект.
-// // logProduct(product) - коллбек принимающий обьект продукта и логирующий его в консоль
-// // logTotalPrice(product) - коллбек принимающий обьект продукта и логирующий общую стоимость товара в консоль
+// for (let i = 0; i < clients.length; i += 1) {
+//   console.log(clients[i]);
+// }
+// const clients = ["Mango", "Ajax", "Poly"];
 
+// for (const client of clients) {
+//   console.log(client);
+// }
 
-// ===============================================================================
-const apple = { name: "apples", price: 35, qty: 250, category: "fruits" };
+// const string = "javascript";
 
-function logProduct(product) {
-    console.log("product callback", product);
-}
-
-logProduct(apple);
-
-
-
-// createProduct(obj, callback);
+// for (const list of string) {
+//   console.log(list);
+// }
